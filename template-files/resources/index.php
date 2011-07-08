@@ -5,12 +5,12 @@
 	<div id="sidebar">
 		<h3><a href="/resources/">{section}</a></h3>
 		<ul id="sb-menu">
-			<li><a href="http://www.weimartv.com" title="Weimar TV">Weimar TV</a></li>
-			<li><a href="http://www.newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
-			<li><a href="http://www.newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
-			<li><a href="http://www.weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
-			<li><a href="weimar-today/" title="Weimar Today">Weimar Today</a></li>
-			<li><a href="featured-videos/" title="Featured Videos">Featured Videos</a></li>
+			<li><a href="http://weimartv.com" title="Weimar TV">Weimar TV</a></li>
+			<li><a href="http://newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
+			<li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
+			<li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
+			<li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
+			<li><a href="/resources/featured-videos/" title="Featured Videos">Featured Videos</a></li>
 			<li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
 
 		</ul>

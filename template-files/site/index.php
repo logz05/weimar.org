@@ -24,12 +24,12 @@
 				<img class="thumb" src="{news_thumb}"/>
 				<div class="title">{title}<div class="date">{entry_date format='%M %j'}</div></div>
 				<hr/>
-				<p class="text">{exp:char_limit total="120"}{news_body}{/exp:char_limit}</p>
+				<p class="text">{exp:char_limit total="160"}{news_body}{/exp:char_limit}</p>
 		</div>
 		{/exp:channel:entries}
 	</div>
 		<div id="events">
-					<h2>Upcoming Events</h2>	
+					<h2 class="heading">Upcoming Events</h2>	
 
 			<ul id="event_feed">
 			
@@ -79,20 +79,20 @@
 		</div><!-- END #events -->
 		<div id="news-wrap">
 		<ul id="news">
-		<h2>Recent News</h2>
+		<h2 class="heading"><a href="/news/">Recent News</a></h2>
 		{exp:channel:entries channel="news" offset="1" orderby="date" sort="desc" limit="3" disable="member_data|trackbacks|categories"}
 			<li class="item clear">
-			<div class="title">{exp:char_limit total="45"}{title}{/exp:char_limit}</div><div class="date">{entry_date format='%M %j'}</div>
+			<div class="title">{exp:char_limit total="40"}{title}{/exp:char_limit}</div><div class="date">{entry_date format='%M %j'}</div>
 				<hr/>
 				<img class="thumb" src="{news_thumb}"/>
-				<p class="text">{exp:char_limit total="120"}{news_body}{/exp:char_limit}</p>
+				{exp:char_limit total="145"}{news_body}{/exp:char_limit}
 			</li>
 			{/exp:channel:entries}
 		</div><!-- END #news -->
 	</div><!-- END #col-left -->
 	<div id="col-right">
 		<div id="quick-links">
-			<h2>Quick Links</h2>
+			<h2 class="heading">Quick Links</h2>
 			<ul>
 				<li><a href="/donate/" title="Donate">Donate</a></li>
 				<li><a href="/resources/weimar-today/" title="Subscribe to Weimar Today">Newsletter</a></li>
