@@ -1,32 +1,8 @@
-
 {embed="includes/_doc-header"}
 <style>
-h2 {
-  margin-top:14px;
-}
-.day {
+textarea, input[type=text] {
   width:100%;
-  float:left;
-}
-.date {
-  float:right;
-  color:#ccc;
-  font-size:14px;
-}
-.day .meal {
-  width:33.4%;
-  float:left;
-}
-.day .meal .food {
-  padding:6px;
-}
-.day .meal h5 {
-  background:#efefef;
-  padding:6px;
-}
-hr {
   clear:both;
-  margin:4px 0;
 }
 </style>
 <div id="content-sub" class="rounded">
@@ -47,22 +23,21 @@ hr {
     <div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/cafeteria.jpg)"></div>
   </div>
   <div id="page-data">
+    {exp:safecracker channel="cafeteria-menu" id="publishForm" return="resources/cafeteria-menu-admin/<?php $date = explode("-", "{segment_3}"); echo $date[0]."/".$date[1]; ?>/success" url_title="{segment_3}" safecracker_head="no"}
+    
+    <label for="title">Breakfast</label><br />
+    <textarea name="breakfast" cols="40" rows="3" id="breakfast" dir="ltr">{breakfast}</textarea>
+    
+    <label for="title">Lunch</label><br />
+    <textarea name="lunch" cols="40" rows="3" id="lunch" dir="ltr">{lunch}</textarea>
+    
+    <label for="title">Supper</label><br />
+    <textarea name="supper" cols="40" rows="3" id="supper" dir="ltr">{supper}</textarea>
+    
+    <input type="submit" name="submit" value="Save Meals" />
 
-      {exp:channel:entries channel="cafeteria-menu" limit="7" show_future_entries="yes" show_current_week="yes"}
-      <div class="day">
-        <h2>{entry_date format="%l"}<div class="date">{entry_date format="%M %j"}</div></h2>
-        <hr/>
-        <div class="meal breakfast"><h5>Breakfast</h5><div class="food">{breakfast}</div></div>
-        <div class="meal lunch"><h5>Lunch</h5><div class="food">{lunch}</div></div>
-        <div class="meal supper"><h5>Supper</h5><div class="food">{supper}</div></div>
-      </div>
-        {paginate}
-  
-        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
-        
-        {/paginate}
-      {/exp:channel:entries}
-    </div>
+  {/exp:safecracker}
+  </div>
   <div class="clear"></div>
 </div>
 {embed="includes/_doc-footer"}

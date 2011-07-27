@@ -11,7 +11,7 @@
 			<li><a href="/about/history" title="History">History</a></li>
 		</ul>
 	</div><!-- END #sidebar -->
-	{exp:channel:entries channel="about" entry_id="725" }
+	{exp:channel:entries channel="about" entry_id="756" }
 	<div id="section-head">
 		<div id="section-head-img" style="background-image:url({head_img})"></div>
 	</div>

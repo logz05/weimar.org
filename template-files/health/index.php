@@ -6,11 +6,11 @@
 	<div id="sidebar">
 		<h3><a href="/health/">Health</a></h3>
 		<ul id="sb-menu">
-			<li><a href="http://www.newstart.com/" title="EWSTART.com">NEWSTART</a></li>
+			<li><a href="http://newstart.com/" title="NEWSTART">NEWSTART</a></li>
 			<li><a href="http://reversingdiabetes.org/" title="ReversingDiabetes.org">Reversing Diabetes</a></li>
-			<li><a href="/health/conference-center/" title="Conference Center">Conference Center</a></li>
-			<li><a href="http://www.newstart.com/" title="EWSTART.com">NEWSTART Club</a></li>
-			<li><a href="http://www.newstart.com/" title="Weiamr Market">Weimar Market</a></li>
+			<li><a href="/health/inn/" title="Conference Center">Conference Center</a></li>
+			<li><a href="http://newstartclub.com/" title="NEWSTART Lifestyle Club">NEWSTART Club</a></li>
+			<li><a href="http://weimarmarket.com/" title="Weiamr Market">Weimar Market</a></li>
 		</ul>
 	</div><!-- END #sidebar -->
 	{exp:channel:entries channel="health" entry_id="719" }
