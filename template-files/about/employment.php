@@ -1,4 +1,4 @@
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header"  title="Employment"}
 {preload_replace:section="About"}
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>
@@ -11,18 +11,20 @@
 			<li><a href="/about/history" title="History">History</a></li>
 		</ul>
 	</div><!-- END #sidebar -->
-	{exp:channel:entries channel="about" entry_id="717" }
-	<div id="section-head">
-		<div id="section-head-img" style="background-image:url({head_img})"></div>
-	</div>
-	<div id="page-data">
-		
-		<div class="entry">
-		<h1>{title}</h1>
-		{body}
-		</div>
-	</div>
-	{/exp:channel:entries}
+	{if segment_3 == ""}
+  	{exp:channel:entries channel="about" entry_id="717" }
+  	<div id="section-head">
+  		<div id="section-head-img" style="background-image:url({head_img})"></div>
+  	</div>
+  	<div id="page-data">
+  		
+  		<div class="entry">
+  		<h1>{title}</h1>
+  		{body}
+  		</div>
+  	</div>
+  	{/exp:channel:entries}
+	{/if}
 	<div class="clear"></div>
 </div>
 {embed="includes/_doc-footer"}

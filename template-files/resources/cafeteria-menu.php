@@ -1,32 +1,41 @@
 
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header" title="Cafeteria Menu"}
 <style>
-h2 {
-  margin-top:14px;
+#calendar td, th {
+  border-left: 1px solid #999;
+  border-bottom: 1px solid #999;
+  width: 120px;
+  padding: 10px 0;
+  text-align: center;
 }
-.day {
-  width:100%;
-  float:left;
+ 
+#calendar table {
+  border-right: 1px solid #999;
+  border-top: 1px solid #999;
 }
-.date {
-  float:right;
-  color:#ccc;
-  font-size:14px;
+ 
+#calendar th {
+  background: #666;
+  color: #fff;
 }
-.day .meal {
-  width:33.4%;
-  float:left;
+ 
+#calendar .other-month {
+  background: #eee;
 }
-.day .meal .food {
-  padding:6px;
+.current-month {
 }
-.day .meal h5 {
-  background:#efefef;
-  padding:6px;
+.current-month.filled {
+  background:#d1e1e6;
 }
-hr {
-  clear:both;
-  margin:4px 0;
+#success {
+  padding:10px;
+  background: green;
+  border-radius:6px;
+  display:none;
+  color:white;
+}
+.calendarMonthLinks a {
+  color:white;
 }
 </style>
 <div id="content-sub" class="rounded">
@@ -39,7 +48,6 @@ hr {
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
       <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <li><a href="/resources/featured-videos/" title="Featured Videos">Featured Videos</a></li>
       <li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
     </ul>
   </div><!-- END #sidebar -->
@@ -48,20 +56,75 @@ hr {
   </div>
   <div id="page-data">
 
-      {exp:channel:entries channel="cafeteria-menu" limit="7" show_future_entries="yes" show_current_week="yes"}
-      <div class="day">
-        <h2>{entry_date format="%l"}<div class="date">{entry_date format="%M %j"}</div></h2>
-        <hr/>
-        <div class="meal breakfast"><h5>Breakfast</h5><div class="food">{breakfast}</div></div>
-        <div class="meal lunch"><h5>Lunch</h5><div class="food">{lunch}</div></div>
-        <div class="meal supper"><h5>Supper</h5><div class="food">{supper}</div></div>
-      </div>
-        {paginate}
+      {exp:channel:calendar channel="cafeteria-menu" show_future_entries="yes"}
+
+<a href="/resources/cafeteria-menu/{current_time format='%Y/%m'}">Current Month</a>
+
+<table class="calendar-month" border="0" cellpadding="6" cellspacing="1" summary="My Calendar" id="calendar" width="100%">
+
+  <tr class="calendarHeader">
+
+    <th><div class="calendarMonthLinks"><a href="{previous_path='/resources/cafeteria-menu'}">&lt;&lt;</a></div></th>
+
+    <th colspan="5">{date format="%F %Y"}</th>
+
+    <th><div class="calendarMonthLinks"><a class="calendarMonthLinks" href="{next_path='/resources/cafeteria-menu'}">&gt;&gt;</a></div></th>
+
+  </tr>
+
+  <tr>
+
+    {calendar_heading}
+
+    <td class="weekday">{lang:weekday_abrev}</td>
+
+    {/calendar_heading}
+
+  </tr>
+
+
+
+  {calendar_rows }
+
+  {row_start}<tr>{/row_start}
+
   
-        <p>Page {current_page} of {total_pages} pages {pagination_links}</p>
-        
-        {/paginate}
-      {/exp:channel:entries}
+
+    {if entries}
+
+    <td class='current-month filled' rel='hasEntry' align='center'>
+
+      <a href="{day_path='/resources/meal-data/'}">{day_number}</a>
+
+    </td>
+
+    {/if}
+
+    
+
+    {if not_entries}
+
+    <td class='current-month' align='center'>{day_number}</td>
+
+    {/if}
+
+    
+
+    {if blank}
+
+    <td class='calendarBlank'></td>
+
+    {/if}
+
+    
+
+  {row_end}</tr>{/row_end}
+
+  {/calendar_rows}
+
+</table>
+
+{/exp:channel:calendar}
     </div>
   <div class="clear"></div>
 </div>

@@ -1,4 +1,4 @@
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header" title="Login"}
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>
 	<div id="sidebar">

@@ -1,4 +1,4 @@
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header" title="History"}
 {preload_replace:section="About"}
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>

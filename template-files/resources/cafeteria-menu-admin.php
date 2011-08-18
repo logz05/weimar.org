@@ -62,7 +62,8 @@ if("{segment_3}" != ""){
  $(".current-month").click(function(){
   var day = $(this).text();
   day = padNumber(day);
-  dateString = year + "-" + month + "-" + day;
+  dateString1 = year + "-" + month + "-" + day;
+  var dateString = dateString1.replace(/\s/g, "");  
   if($(this).attr("rel") == "hasEntry"){ window.location = "/resources/cafeteria-menu-edit/" + dateString; } else {
   window.location = "/resources/cafeteria-menu-add/" + dateString;
  }

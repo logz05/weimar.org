@@ -1,6 +1,5 @@
-{embed="includes/_doc-header" title="Contact Us}
+{embed="includes/_doc-header" title="Terms of Use"}
 {preload_replace:section="About"}
-
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>
 	<div id="sidebar">
@@ -12,9 +11,9 @@
 			<li><a href="/about/history" title="History">History</a></li>
 		</ul>
 	</div><!-- END #sidebar -->
-	{exp:channel:entries channel="about" entry_id="720" }
+	{exp:channel:entries channel="about" entry_id="765" }
 	<div id="section-head">
-		<div id="section-head-img" style="background-image:url({head_img})"></div>
+		<div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/about1.jpg)"></div>
 	</div>
 	<div id="page-data">
 		

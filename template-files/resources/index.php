@@ -1,4 +1,4 @@
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header" title="Resources"}
 {preload_replace:section="Resources"}
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>
@@ -10,8 +10,7 @@
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
       <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <li><a href="/resources/featured-videos/" title="Featured Videos">Featured Videos</a></li>
-      <li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
+      <!--<li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>-->
     </ul>
   </div><!-- END #sidebar -->
   {exp:channel:entries channel="resources" entry_id="726" }

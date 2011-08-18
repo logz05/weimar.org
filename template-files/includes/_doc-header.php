@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>{if embed:title}{embed:title} | {site_name}{if:else}{site_name}{/if}</title>
+  <title>{if embed:title}{embed:title} | Weimar Center{if:else}{site_name}{/if}</title>
 
   <meta name="description" content="">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>

@@ -1,4 +1,4 @@
-{embed="includes/_doc-header"}
+{embed="includes/_doc-header" title="Health"}
 {preload_replace:section="Health"}
 <link rel="stylesheet" href="/assets/css/new.css">
 <div id="content-sub" class="rounded">
@@ -8,7 +8,7 @@
 		<ul id="sb-menu">
 			<li><a href="http://newstart.com/" title="NEWSTART">NEWSTART</a></li>
 			<li><a href="http://reversingdiabetes.org/" title="ReversingDiabetes.org">Reversing Diabetes</a></li>
-			<li><a href="/health/inn/" title="Conference Center">Conference Center</a></li>
+			<li><a href="/health/inn/" title="Weimar Inn">Weimar Inn</a></li>
 			<li><a href="http://newstartclub.com/" title="NEWSTART Lifestyle Club">NEWSTART Club</a></li>
 			<li><a href="http://weimarmarket.com/" title="Weiamr Market">Weimar Market</a></li>
 		</ul>
