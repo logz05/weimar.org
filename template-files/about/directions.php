@@ -38,7 +38,7 @@ background: #FFF url(http://www.weimar.edu/styles/weimar_college/map_watermark.j
 			<div id="map"></div>
 			<div class="directions"> 
 		
-		<h1>From Sacramento</h1> 
+		<h2>From Sacramento</h2> 
 		<p>Head East on <strong>I-80</strong><br /> 
 Take exit <strong>130 West Paoli Lane</strong><br /> 
 Turn Left onto <strong>West Paoli Lane</strong><br /> 
@@ -51,7 +51,7 @@ The college buildings will be on the <strong>Left</strong></p>
   	</div> 
   	<div class="directions"> 
 		
-		<h1>From Reno</h1> 
+		<h2>From Reno</h2> 
 		<p>Head West on <strong>I-80</strong><br /> 
 Take exit <strong>130 West Paoli Lane</strong><br /> 
 Follow the ramp around to the <strong>Right</strong><br /> 

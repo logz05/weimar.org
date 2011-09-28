@@ -14,7 +14,7 @@
 	</div><!-- END #sidebar -->
 	{exp:channel:entries channel="about" entry_id="720" }
 	<div id="section-head">
-		<div id="section-head-img" style="background-image:url({head_img})"></div>
+		<div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/about1.jpg)"></div>
 	</div>
 	<div id="page-data">
 		
