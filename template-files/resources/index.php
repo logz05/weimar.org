@@ -9,8 +9,9 @@
       <li><a href="http://newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
-      <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <!--<li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>-->
+      <li><a href="/weimartoday" title="Weimar Today">Weimar Today</a></li>
+      <li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>
+      {if logged_in}<li><a href="/resources/cafeteria-menu-admin/" title="Cafeteria Menu Admin">Cafeteria Menu Admin</a></li>{/if}
     </ul>
   </div><!-- END #sidebar -->
   {exp:channel:entries channel="resources" entry_id="726" }
