@@ -19,23 +19,8 @@
     <div id="section-head-img" style="background-image:url({exp:channel:entries channel='donate' entry_id='722' }{head_img}{/exp:channel:entries})"></div>
   </div>
   <div id="page-data">
-{if segment_2==""}
-  {exp:channel:entries channel="donate" entry_id="722" }
-    <div class="entry">
-    <h1>{title}</h1>
-    {body}
-    </div>
-  {/exp:channel:entries}
-{/if}
-  <h1>Make a Donation</h1>
-  <h2>Phone</h2>
-  <p>To make a donation call 530-422-7995</p>
-  <!--
-<h2>Mail</h2>
-  <p>Address Goes Here<br>
-  Anytown, CA USA</p>
--->
-
+    <p>Your donation is empty</p>
+    <a href="/donate-test/">Donate</a>
   </div>
   <div class="clear"></div>
 </div>
