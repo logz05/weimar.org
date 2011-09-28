@@ -1,31 +1,53 @@
-
 {embed="includes/_doc-header" title="Cafeteria Menu"}
 <style>
 #calendar td, th {
   border-left: 1px solid #999;
   border-bottom: 1px solid #999;
   width: 120px;
-  padding: 10px 0;
+  padding: 18px 0;
   text-align: center;
 }
- 
+#calendar td.weekday {
+  padding: 8px 0;
+  background: #2B5E72;
+  color: #fff;
+  font-weight: 600;
+}
 #calendar table {
   border-right: 1px solid #999;
   border-top: 1px solid #999;
 }
  
 #calendar th {
-  background: #666;
-  color: #fff;
+  background: #fff;
+  color: #2B5E72;
+  border: none;
+  border-bottom: 1px solid #999;
 }
  
 #calendar .other-month {
   background: #eee;
 }
-.current-month {
+td:last-child, th:last-child {
+	border-right: 1px solid #999;
 }
-.current-month.filled {
-  background:#d1e1e6;
+#calendar td.calendarToday {
+  border: 2px solid #2B5E72;
+}
+#calendar td.calendarCell.filled:hover {
+  background: #aec8d0;
+}
+td.calendarCell:hover,
+td.calendarToday:hover {
+  background: #eee;
+}
+
+#calendar td.calendarCell.filled {
+  padding: 0;
+}
+.calendarCell.filled a {
+  display: block;
+  padding: 18px 0;
 }
 #success {
   padding:10px;
@@ -35,7 +57,7 @@
   color:white;
 }
 .calendarMonthLinks a {
-  color:white;
+  color: #2B5E72;
 }
 </style>
 <div id="content-sub" class="rounded">
@@ -47,16 +69,18 @@
       <li><a href="http://newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
-      <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
+      <li><a href="/weimartoday" title="Weimar Today">Weimar Today</a></li>
+      <li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>
+      {if logged_in}<li><a href="/resources/cafeteria-menu-admin/" title="Cafeteria Menu Admin">Cafeteria Menu Admin</a></li>{/if}
     </ul>
   </div><!-- END #sidebar -->
   <div id="section-head">
-    <div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/cafeteria.jpg)"></div>
+    <div id="section-head-img" style="background-image:url(/assets/images/header/cafeteria.jpg)"></div>
   </div>
   <div id="page-data">
-
-      {exp:channel:calendar channel="cafeteria-menu" show_future_entries="yes"}
+    <h1>Cafeteria Menu</h1>
+    <p>Click on a day below to see the menu for that day. Days that are shaded have menu added.</p>
+      {exp:channel:calendar channel="cafeteria-menu" show_future_entries="yes" switch="calendarToday|calendarCell"}
 
 <a href="/resources/cafeteria-menu/{current_time format='%Y/%m'}">Current Month</a>
 
@@ -92,9 +116,9 @@
 
     {if entries}
 
-    <td class='current-month filled' rel='hasEntry' align='center'>
+    <td class="{switch} filled" rel="hasEntry" align="center">
 
-      <a href="{day_path='/resources/meal-data/'}">{day_number}</a>
+      <a href="{day_path='/resources/cafeteria-menu-detail/'}">{day_number}</a>
 
     </td>
 
@@ -104,7 +128,7 @@
 
     {if not_entries}
 
-    <td class='current-month' align='center'>{day_number}</td>
+    <td class="{switch}" align="center">{day_number}</td>
 
     {/if}
 
@@ -112,7 +136,7 @@
 
     {if blank}
 
-    <td class='calendarBlank'></td>
+    <td class="calendarBlank"></td>
 
     {/if}
 

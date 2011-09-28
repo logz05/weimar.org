@@ -1,33 +1,51 @@
-
 {embed="includes/_doc-header"}
-
+{if logged_out}
+{redirect="/login/"}
+{/if}
 <style> 
 #calendar td, th {
   border-left: 1px solid #999;
   border-bottom: 1px solid #999;
   width: 120px;
-  padding: 10px 0;
+  padding: 18px 0;
   text-align: center;
 }
- 
+#calendar td.weekday {
+  padding: 8px 0;
+  background: #2B5E72;
+  color: #fff;
+  font-weight: 600;
+}
 #calendar table {
   border-right: 1px solid #999;
   border-top: 1px solid #999;
 }
  
 #calendar th {
-  background: #666;
-  color: #fff;
+  background: #fff;
+  color: #2B5E72;
+  border: none;
+  border-bottom: 1px solid #999;
 }
  
 #calendar .other-month {
   background: #eee;
 }
-.current-month {
+td:last-child, th:last-child {
+	border-right: 1px solid #999;
+}
+#calendar td.calendarToday {
+  border: 2px solid #2B5E72;
+}
+#calendar td.calendarCell.filled:hover {
+  background: #aec8d0;
+}
+td.calendarCell, td.calendarToday {
   cursor: pointer;
 }
-.current-month.filled {
-  background:#d1e1e6;
+td.calendarCell:hover,
+td.calendarToday:hover {
+  background: #eee;
 }
 #success {
   padding:10px;
@@ -37,7 +55,7 @@
   color:white;
 }
 .calendarMonthLinks a {
-  color:white;
+  color: #2B5E72;
 }
 </style> 
 
@@ -59,7 +77,7 @@ if("{segment_3}" != ""){
   var month = padNumber({current_time format='%m'});
 }
 
- $(".current-month").click(function(){
+ $(".calendarCell").click(function(){
   var day = $(this).text();
   day = padNumber(day);
   dateString1 = year + "-" + month + "-" + day;
@@ -79,18 +97,20 @@ if("{segment_3}" != ""){
       <li><a href="http://newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
-      <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <li><a href="/resources/featured-videos/" title="Featured Videos">Featured Videos</a></li>
-      <li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
+      <li><a href="/weimartoday" title="Weimar Today">Weimar Today</a></li>
+      <li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>
+      {if logged_in}<li><a href="/resources/cafeteria-menu-admin/" title="Cafeteria Menu Admin">Cafeteria Menu Admin</a></li>{/if}
     </ul>
   </div><!-- END #sidebar -->
   <div id="section-head">
-    <div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/cafeteria.jpg)"></div>
+    <div id="section-head-img" style="background-image:url(/assets/images/header/cafeteria.jpg)"></div>
   </div>
   <div id="page-data">
+  <h1>Cafeteria Menu Admin</h1>
+  <p>To add meals click on the day numbers. Days that have a shaded background have a menu added to them. Days with a white background are empty.</p>
   <div id="success">Meal added successfully!</div>
 
-      {exp:channel:calendar channel="cafeteria-menu" show_future_entries="yes"}
+      {exp:channel:calendar channel="cafeteria-menu" show_future_entries="yes" switch="calendarToday|calendarCell"}
 
 <a href="/resources/cafeteria-menu-admin/{current_time format='%Y/%m'}">Current Month</a>
 
@@ -126,7 +146,7 @@ if("{segment_3}" != ""){
 
     {if entries}
 
-    <td class='current-month filled' rel='hasEntry' align='center'>
+    <td class="{switch} filled" rel="hasEntry" align="center">
 
       {day_number}
 
@@ -138,7 +158,7 @@ if("{segment_3}" != ""){
 
     {if not_entries}
 
-    <td class='current-month' align='center'>{day_number}</td>
+    <td class="{switch}" align="center">{day_number}</td>
 
     {/if}
 
@@ -146,7 +166,7 @@ if("{segment_3}" != ""){
 
     {if blank}
 
-    <td class='calendarBlank'></td>
+    <td class="calendarBlank"></td>
 
     {/if}
 

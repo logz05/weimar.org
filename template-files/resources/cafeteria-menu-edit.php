@@ -14,25 +14,25 @@ textarea, input[type=text] {
       <li><a href="http://newstartclub.com" title="NEWSTART Club">NEWSTART Club</a></li>
       <li><a href="http://newstartexpo.com" title="NEWSTART Expo">NEWSTART Expo</a></li>
       <li><a href="http://weimarmarket.com" title="Weimar Market">Weimar Market</a></li>
-      <li><a href="/resources/weimar-today/" title="Weimar Today">Weimar Today</a></li>
-      <li><a href="/resources/featured-videos/" title="Featured Videos">Featured Videos</a></li>
-      <li><a href="/resources/cafeteria-menu/" title="Featured Videos">Cafeteria Menu</a></li>
+      <li><a href="/weimartoday" title="Weimar Today">Weimar Today</a></li>
+      <li><a href="/resources/cafeteria-menu/" title="Cafeteria Menu">Cafeteria Menu</a></li>
+      {if logged_in}<li><a href="/resources/cafeteria-menu-admin/" title="Cafeteria Menu Admin">Cafeteria Menu Admin</a></li>{/if}
     </ul>
   </div><!-- END #sidebar -->
   <div id="section-head">
-    <div id="section-head-img" style="background-image:url(http://center.weimar.edu/assets/images/header/cafeteria.jpg)"></div>
+    <div id="section-head-img" style="background-image:url(/assets/images/header/cafeteria.jpg)"></div>
   </div>
   <div id="page-data">
     {exp:safecracker channel="cafeteria-menu" id="publishForm" return="resources/cafeteria-menu-admin/<?php $date = explode("-", "{segment_3}"); echo $date[0]."/".$date[1]; ?>/success" url_title="{segment_3}" safecracker_head="no"}
     
     <label for="title">Breakfast</label><br />
-    <textarea name="breakfast" cols="40" rows="3" id="breakfast" dir="ltr">{breakfast}</textarea>
+    <textarea name="breakfast" cols="40" rows="6" id="breakfast" dir="ltr">{breakfast}</textarea>
     
     <label for="title">Lunch</label><br />
-    <textarea name="lunch" cols="40" rows="3" id="lunch" dir="ltr">{lunch}</textarea>
+    <textarea name="lunch" cols="40" rows="6" id="lunch" dir="ltr">{lunch}</textarea>
     
     <label for="title">Supper</label><br />
-    <textarea name="supper" cols="40" rows="3" id="supper" dir="ltr">{supper}</textarea>
+    <textarea name="supper" cols="40" rows="6" id="supper" dir="ltr">{supper}</textarea>
     
     <input type="submit" name="submit" value="Save Meals" />
 
