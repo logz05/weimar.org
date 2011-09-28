@@ -1,6 +1,5 @@
 {embed="includes/_doc-header" title="Health"}
 {preload_replace:section="Health"}
-<link rel="stylesheet" href="/assets/css/new.css">
 <div id="content-sub" class="rounded">
 <div id="sb_sdw"></div>
 	<div id="sidebar">
@@ -18,7 +17,7 @@
 		<div id="section-head-img" style="background-image:url({head_img})"></div>
 	</div>
 	<div id="page-data">
-		
+		{embed="includes/_edit-this" channel="{channel_id}" entry="{entry_id}"}
 		<div class="entry">
 		<h1>{title}</h1>
 		{body}

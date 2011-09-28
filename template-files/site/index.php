@@ -1,11 +1,17 @@
 {embed="includes/_doc-header"}
-
-
-<!--  initialize the slideshow when the DOM is ready -->
-
-  <div class="rounded" id="bap" style="background:url(/assets/images/bap/banner_ted.jpg);">
-  
-
+<script src="/assets/js/jquery.prettyPhoto.js"></script>
+<link rel="stylesheet" href="/assets/css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+  <div class="rounded" id="bap" style="background:url(/assets/images/bap/ns-global-bap.jpg);">
+    <p>&ldquo;The <span class="health">gospel of health</span> is to be firmly linked with the <span class="ministry">ministry of the Word</span>&hellip;&rdquo;</p>
+    <a id="watch-now" href="http://vimeo.com/27510556?title=0&amp;byline=0&amp;portrait=0&amp;width=700&amp;height=400" rel="prettyPhoto" title="">Watch Now</a>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function(){
+        $("a[rel^='prettyPhoto']").prettyPhoto({
+          theme: 'dark_rounded',
+          social_tools: false
+        });
+      });
+    </script>
     <nav id="sub">
       <ul>
         <li><a href="http://newstart.com/">NEWSTART</a></li>
@@ -23,7 +29,7 @@
     <a href="/news/archives/{url_title}" title="{title}">
       <div class="item">
         {exp:ce_img:single src="{news_thumb}" max_width="133" max_height="100" crop="yes" attributes="class='thumb'"}
-        <div class="title">{exp:char_limit total="40"}{title}{/exp:char_limit}<div class="date">{entry_date format='%M %j'}</div></div>
+        <div class="title">{exp:char_limit total="35"}{title}{/exp:char_limit}<div class="date">{entry_date format='%M %j'}</div></div>
         <hr/>
         <p class="text">{exp:char_limit total="160"}{news_body}{/exp:char_limit}</p>
       </div>
@@ -58,7 +64,7 @@
     <ul id="news">
     <h2 class="heading"><a href="/news/{current_time format='%Y'}">Recent News</a></h2>
     {exp:channel:entries channel="news" offset="1" orderby="date" sort="desc" limit="2" disable="member_data|trackbacks|categories"}
-      <a href="/news/archives/{entry_date format='%Y'}/{url_title}" title="{title}">
+      <a href="/news/archives/{url_title}" title="{title}">
         <li class="item clear">
         <div class="title">{exp:char_limit total="40"}{title}{/exp:char_limit}</div><div class="date">{entry_date format='%M %j'}</div>
           <hr/>
